@@ -370,7 +370,7 @@
   $count = 0;
 
   if ($handle = opendir('.')) {
-    $ignoreList = array('cgi-bin', '.', '..', '._');
+    $ignoreList = array('cgi-bin', '.', '..', '._', 'scripts');
 
     while (false !== ($file = readdir($handle))) {
       if (
@@ -426,7 +426,7 @@
           </div>
 
           <div class="actions">
-          <a class="btn" href="open-in-sublime.php?dir=' . rawurlencode($file) . '">Sublime</a>';
+          <a class="btn" href="scripts/open-in-sublime.php?dir=' . rawurlencode($file) . '">Sublime</a>';
 
         if ($isWp) {
           $loginUrl = $scheme . "://" . $file . "." . $tld . "/wp-login.php";

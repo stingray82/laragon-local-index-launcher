@@ -3,7 +3,7 @@ setlocal EnableExtensions EnableDelayedExpansion
 
 :: ===== Config =====
 set "TASK_NAME=Laragon Open in Sublime"
-set "WATCHER_PS=C:\laragon\www\open-sublime-watcher.ps1"
+set "WATCHER_PS=C:\laragon\www\scripts\open-sublime-watcher.ps1"
 
 :menu
 cls
@@ -59,7 +59,7 @@ schtasks /Create ^
   /TN "%TASK_NAME%" ^
   /SC ONLOGON ^
   /RL LIMITED ^
-  /TR "powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File \"%WATCHER_PS%\"" ^
+  /TR "wscript.exe \"C:\laragon\www\scripts\open-sublime-watcher-hidden.vbs\"" ^
   >nul 2>&1
 
 if %errorlevel%==0 (
