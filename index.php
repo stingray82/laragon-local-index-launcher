@@ -30,6 +30,12 @@
            .badge--light / .badge--dark
       */
 
+    .btn-mailpit{
+    border-color: rgba(79,70,229,.25);
+    background: rgba(79,70,229,.10);
+    color: #1f2a74;
+  	}
+
       /* Light badge palette */
       --wp-bg: rgba(79,70,229,.10);     --wp-tx: #3730a3;
       --sure-bg: rgba(245,158,11,.14);  --sure-tx: #92400e;
@@ -355,6 +361,7 @@
     [ 'label' => 'SureCart',   'brand' => 'b-sure',   'tone' => 'light', 'anyOf' => ['wp-content/plugins/surecart', 'wp-content/plugins/surecart-pro'] ],
     [ 'label' => 'SureForms',  'brand' => 'b-sure',   'tone' => 'light', 'anyOf' => ['wp-content/plugins/sureforms', 'wp-content/plugins/sureforms-pro'] ],
     [ 'label' => 'SureDash',   'brand' => 'b-sure',   'tone' => 'light', 'anyOf' => ['wp-content/plugins/suredash', 'wp-content/plugins/suredash-pro'] ],
+    [ 'label' => 'Presto',	   'brand' => 'b-sure',   'tone' => 'light', 'anyOf' => ['wp-content/plugins/presto-player', 'wp-content/plugins/presto-player-pro'] ],
 
     [ 'label' => 'WooCommerce','brand' => 'b-woo',    'tone' => 'light', 'anyOf' => ['wp-content/plugins/woocommerce'] ],
 
@@ -426,7 +433,7 @@
           </div>
 
           <div class="actions">
-          <a class="btn" href="scripts/open-in-sublime.php?dir=' . rawurlencode($file) . '">Sublime</a>';
+          <a class="btn" href=".scripts/open-in-sublime.php?dir=' . rawurlencode($file) . '">Sublime</a>';
 
         if ($isWp) {
           $loginUrl = $scheme . "://" . $file . "." . $tld . "/wp-login.php";
@@ -456,6 +463,9 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M505 442.7L405.3 343c28.4-34.9 45.7-79.4 45.7-128.0C451 96.5 354.5 0 231 0S11 96.5 11 215s96.5 215 220 215c48.6 0 93.1-17.3 128-45.7L458.7 494c6.2 6.2 14.4 9.4 22.6 9.4s16.4-3.1 22.6-9.4c12.5-12.5 12.5-32.8.1-45.3zM231 382c-92.3 0-167-74.7-167-167S138.7 48 231 48s167 74.7 167 167-74.7 167-167 167z"/></svg>
           <input id="search" type="search" placeholder="Search projects…" autocomplete="off" />
         </div>
+        <a class="btn btn-mailpit" target="_blank" rel="noopener" href="http://localhost:8025/">
+	    Mailpit
+	  </a>
         <div class="meta"><span id="count"><?php echo (int)$count; ?></span> shown</div>
       </div>
     </div>
@@ -503,6 +513,9 @@
         applyFilter();
         input.blur();
       }
+ 	  if ((e.key === 'm' || e.key === 'M') && document.activeElement !== input) {
+		  window.open('http://localhost:8025/', '_blank', 'noopener');
+		}
     });
   })();
 </script>

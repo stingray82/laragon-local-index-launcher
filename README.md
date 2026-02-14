@@ -4,6 +4,7 @@ A lightweight local dashboard for browsing projects in `C:\laragon\www` with:
 - One-click site access (`https://project.test`)
 - Automatic WordPress detection & badges
 - One-click **Open in Sublime Text**
+- Quick access to **Mailpit inbox**
 - Zero per-project setup
 - Works with nginx / PHP running as a service on Windows
 
@@ -19,6 +20,7 @@ Designed for fast local dev workflows.
 - Opens sites in browser
 - Opens projects in **Sublime Text** reliably (even when PHP runs as a service)
 - Brings Sublime window to the foreground
+- One‑click access to **Mailpit** (`http://localhost:8025`)
 - No CLI usage required
 - No editor plugins required
 
@@ -31,6 +33,7 @@ Designed for fast local dev workflows.
 - PHP 8+
 - Sublime Text 4
 - PowerShell (built-in to Windows)
+- Mailpit (running locally on port **8025**)
 
 ---
 
@@ -85,8 +88,17 @@ http://localhost/
   - **Open** → open site in browser
   - **Login** → WordPress admin
   - **Sublime** → opens folder in Sublime and brings it to front
+  - **Mailpit** → opens the local email inbox UI
 
 New folders work instantly — no setup required.
+
+### Keyboard Shortcuts
+
+-   `/` → focus search\
+-   `Esc` → clear search\
+-   `M` → open Mailpit in a new tab
+
+New folders work instantly --- no setup required.
 
 ---
 
@@ -121,6 +133,27 @@ No hacks, no third-party tools.
 
 ---
 
+## Mailpit Integration
+
+Mailpit provides a local email testing inbox for development.
+
+This dashboard includes:
+
+-   A **Mailpit button** in the top toolbar\
+-   Direct link to:
+
+```{=html}
+<!-- -->
+```
+
+    http://localhost:8025
+
+-   Optional **keyboard shortcut (M)** to open Mailpit instantly
+
+No configuration required if Mailpit is already running.
+
+-------
+
 ## Security Notes
 
 - PHP never executes external programs
@@ -143,12 +176,14 @@ open-sublime-queue.txt
 
 ## Customization
 
-- Change project root:
-  - Edit `$base` in `open-in-sublime.php`
-- Change Sublime path:
-  - Edit `$SublimeExe` in `open-sublime-watcher.ps1`
-- Add/remove badge rules:
-  - Edit `$badgeRules` in `index.php`
+-   Change project root:
+    -   Edit `$base` in `open-in-sublime.php`
+-   Change Sublime path:
+    -   Edit `$SublimeExe` in `open-sublime-watcher.ps1`
+-   Add/remove badge rules:
+    -   Edit `$badgeRules` in `index.php`
+-   Change Mailpit URL or port:
+    -   Edit the Mailpit link in `index.php`
 
 ---
 
