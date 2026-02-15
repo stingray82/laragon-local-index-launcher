@@ -438,10 +438,11 @@
         if ($isWp) {
           $loginUrl = $scheme . "://" . $file . "." . $tld . "/wp-login.php";
           $safeLoginUrl = htmlspecialchars($loginUrl, ENT_QUOTES, "UTF-8");
-          $thelist .= '<a target="_blank" class="btn btn-login" href="' . $safeLoginUrl . '">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 128c0-70.7-57.3-128-128-128S96 57.3 96 128v64H64c-35.3 0-64 28.7-64 64v192c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V256c0-35.3-28.7-64-64-64h-32V128zm-192 0c0-35.3 28.7-64 64-64s64 28.7 64 64v64H160v-64z"/></svg>
-              Login
-            </a>';
+          $thelist .= '<a class="btn btn-login" href=".scripts/wp-login-smart.php?dir=' . rawurlencode($file) . '">
+			  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 128c0-70.7-57.3-128-128-128S96 57.3 96 128v64H64c-35.3 0-64 28.7-64 64v192c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V256c0-35.3-28.7-64-64-64h-32V128zm-192 0c0-35.3 28.7-64 64-64s64 28.7 64 64v64H160v-64z"/></svg>
+			  Login
+			</a>';
+
         }
 
         $thelist .= '</div></li>';
