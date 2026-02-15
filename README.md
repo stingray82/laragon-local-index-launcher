@@ -243,6 +243,12 @@ wp help login
 wp login create admin --url-only
 ```
 
+Debug Login
+
+```bash
+http://localhost/.scripts/wp-login-smart.php?dir=exampledirectory&debug=1
+```
+
 If magic URLs 404 on nginx, ensure permalinks/rewrite rules are working and try flushing rewrites:
 
 ```bash
