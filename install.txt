@@ -1,0 +1,3 @@
+This is WIP
+
+powershell -ExecutionPolicy Bypass -File .\setup.ps1 -Force -InstallWpCliLoginPackage -InstallLoginCompanion -CreateMuLoader -Repair
