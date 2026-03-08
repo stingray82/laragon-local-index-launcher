@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * MU loader for WP-CLI Login Command Server
  * - Loads the plugin from wp-content/plugins/...
